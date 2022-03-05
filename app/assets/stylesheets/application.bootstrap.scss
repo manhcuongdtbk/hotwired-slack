@@ -1,2 +1,7 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+//@import 'bootstrap/scss/bootstrap';
+@import './mazer/bootstrap';
+@import './mazer/vendors/iconly/bold.css';
+@import 'perfect-scrollbar/css/perfect-scrollbar';
+@import './mazer/vendors/bootstrap-icons/bootstrap-icons.css';
+//@import 'bootstrap-icons/font/bootstrap-icons';
+@import './mazer/app';
