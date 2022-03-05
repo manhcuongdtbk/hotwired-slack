@@ -18,10 +18,10 @@
 
         <li
           class="sidebar-item active ">
-          <a href="index.html" class='sidebar-link'>
+          <%= link_to dashboard_root_path, class: "sidebar-link" do %>
             <i class="bi bi-grid-fill"></i>
             <span>Dashboard</span>
-          </a>
+          <% end %>
         </li>
 
         <li
@@ -115,7 +115,7 @@
               <a href="layout-vertical-1-column.html">1 Column</a>
             </li>
             <li class="submenu-item ">
-              <a href="layout-vertical-navbar.html">Vertical Navbar</a>
+              <%= link_to "Vertical Navbar", dashboard_root_path %>
             </li>
             <li class="submenu-item ">
               <a href="layout-rtl.html">RTL Layout</a>
@@ -361,33 +361,6 @@
             </li>
           </ul>
         </li>
-
-        <li class="sidebar-title">Raise Support</li>
-
-        <li
-          class="sidebar-item  ">
-          <a href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
-            <i class="bi bi-life-preserver"></i>
-            <span>Documentation</span>
-          </a>
-        </li>
-
-        <li
-          class="sidebar-item  ">
-          <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
-            <i class="bi bi-puzzle"></i>
-            <span>Contribute</span>
-          </a>
-        </li>
-
-        <li
-          class="sidebar-item  ">
-          <a href="https://github.com/zuramai/mazer#donate" class='sidebar-link'>
-            <i class="bi bi-cash"></i>
-            <span>Donate</span>
-          </a>
-        </li>
-
       </ul>
     </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
