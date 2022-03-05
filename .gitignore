@@ -53,3 +53,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
