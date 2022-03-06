@@ -1,0 +1,13 @@
+<% if message.user_id == current_user.id %>
+  <div class="chat">
+    <div class="chat-body">
+      <div class="chat-message"><%= message.body %></div>
+    </div>
+  </div>
+<% else %>
+  <div class="chat chat-left">
+    <div class="chat-body">
+      <div class="chat-message"><%= message.body %></div>
+    </div>
+  </div>
+<% end %>
