@@ -21,7 +21,7 @@ export default class extends Controller {
   }
 
   _connected() {
-
+    this.scrollToBottom()
   }
 
   _disconnected() {
@@ -31,10 +31,19 @@ export default class extends Controller {
   _received(data) {
     if (data.message) {
       this.messagesTarget.insertAdjacentHTML('beforeend', data.message)
+
+      // Check whether the document is not hidden for the case when user is not on the current chat tab
+      if (!document.hidden) {
+        this.subscription.perform("touch")
+      }
     }
   }
 
   clearMessage(e) {
     this.newMessageTarget.value = ''
+  }
+
+  scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight)
   }
 }

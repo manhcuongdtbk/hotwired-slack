@@ -6,7 +6,13 @@ module Dashboard
       @channels = Channel.all
     end
 
-    def show; end
+    def show
+      @channels_user = current_user.channels_users.find_by(channel: @channel)
+      real_last_read_at = @channels_user&.last_read_at # user do read at least 1 message
+      fake_last_read_at = 1.year.ago # user didn't read any message
+      @last_read_at = real_last_read_at || fake_last_read_at
+      @channels_user&.touch(:last_read_at)
+    end
 
     def new
       @channel = Channel.new

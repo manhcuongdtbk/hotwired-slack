@@ -1,3 +1,8 @@
+<% if !@bar_shown && @last_read_at && message.created_at > @last_read_at %>
+  <% @bar_shown = true %>
+  <div class="border-bottom border-danger"></div>
+<% end %>
+
 <% if message.user_id == current_user.id %>
   <div class="chat">
     <div class="chat-body">
