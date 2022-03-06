@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     root 'homes#show'
+
+    resources :channels do
+      resource :channels_users, only: %i[create destroy]
+    end
   end
 end

@@ -87,6 +87,11 @@ braces@~3.0.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
+dayjs@^1.8.28:
+  version "1.10.8"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.8.tgz#267df4bc6276fcb33c04a6735287e3f429abec41"
+  integrity sha512-wbNwDfBHHur9UOzNUjeKUOJ0fCb0a52Wx0xInmQ7Y8FstyajiV1NmK1e00cxsr9YrE9r7yAChE0VvpuY5Rnlow==
+
 esbuild-android-64@0.14.25:
   version "0.14.25"
   resolved "https://registry.yarnpkg.com/esbuild-android-64/-/esbuild-android-64-0.14.25.tgz#d532d38cb5fe0ae45167ce35f4bbc784c636be40"
@@ -291,6 +296,13 @@ sass@^1.49.9:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
+
+simple-datatables@2.1.13:
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/simple-datatables/-/simple-datatables-2.1.13.tgz#7285653892cff37ead3ce8429559346b2d21446a"
+  integrity sha512-wKl0AXy0TbFi9YlQpph8kSdNHey2cMb8AcV3gjT0ccm1Fm+yMRE6trIAwDIMgqVQpCW5VWKYbOoDjKjfCoQRPg==
+  dependencies:
+    dayjs "^1.8.28"
 
 "source-map-js@>=0.6.2 <2.0.0":
   version "1.0.2"

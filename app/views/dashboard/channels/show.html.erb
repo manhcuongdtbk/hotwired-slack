@@ -1,0 +1,5 @@
+<% if current_user.channels.include?(@channel) %>
+  You're in <%= @channel.name %>
+<% else %>
+  <%= link_to "Join #{@channel.name}", dashboard_channel_channels_users_path(@channel), data: { "turbo-method" => "post" } %>
+<% end %>

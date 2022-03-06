@@ -1,0 +1,19 @@
+<div class="card-content">
+  <div class="card-body">
+    <%= form_with model: [:dashboard, channel], class: "form form-vertical" do |f| %>
+      <div class="form-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <%= f.label :name, "Channel Name" %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-12 d-flex justify-content-end">
+            <%= f.submit "Submit", class: "btn btn-primary me-1 mb-1"  %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
