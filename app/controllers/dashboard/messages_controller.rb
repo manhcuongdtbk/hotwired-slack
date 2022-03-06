@@ -4,6 +4,7 @@ module Dashboard
 
     def create
       @message = @channel.messages.create(message_params)
+      MessageChannel.broadcast_to(@channel, message: render_to_string(@message)) # render the messages/message partial
     end
 
     private

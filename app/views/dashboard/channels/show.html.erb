@@ -7,7 +7,7 @@
     </a>
   </header>
 
-  <div class="page-heading">
+  <div class="page-heading" data-controller="channel" data-channel-id-value="<%= @channel.id %>">
     <div class="page-title">
       <div class="row">
         <div class="col-12 col-md-6 order-md-1 order-last">
@@ -44,7 +44,7 @@
 <!--              </div>-->
 <!--            </div>-->
             <div class="card-body pt-4 bg-grey">
-              <div class="chat-content">
+              <div class="chat-content" data-channel-target="messages">
                 <%= render @channel.messages %>
               </div>
             </div>
@@ -52,8 +52,8 @@
               <div class="message-form d-flex flex-direction-column align-items-center">
                 <a href="http://" class="black"><i data-feather="smile"></i></a>
                 <div class="d-flex flex-grow-1 ml-4">
-                  <%= form_with model: [:dashboard, @channel, Message.new], class: "form" do |f| %>
-                    <%= f.text_field :body, class: "form-control", placeholder: "Type your message.." %>
+                  <%= form_with model: [:dashboard, @channel, Message.new], local: false, class: "form", data: { action: "ajax:success->channel#clearMessage" } do |f| %>
+                    <%= f.text_field :body, class: "form-control", placeholder: "Type your message..", data: { "channel-target" => "newMessage" } %>
                   <% end %>
                 </div>
               </div>
