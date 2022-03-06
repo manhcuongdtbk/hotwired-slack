@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   enum :locale, Settings.i18n.available_locales.to_h, default: I18n.default_locale
+
+  validates :name, presence: true
 end

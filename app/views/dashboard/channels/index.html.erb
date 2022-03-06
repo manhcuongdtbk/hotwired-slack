@@ -31,19 +31,18 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>City</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            <% 20.times do |n| %>
+            <% channels = (1..20).to_a + @channels %>
+            <% channels.each do |channel| %>
               <tr>
-                <td><%= Faker::Name.name %></td>
-                <td><%= Faker::Internet.email %></td>
-                <td><%= Faker::PhoneNumber.phone_number %></td>
-                <td><%= Faker::Nation.capital_city %></td>
+                <% if channel.is_a?(Channel) %>
+                  <td><%= channel.name %></td>
+                <% else %>
+                  <td><%= Faker::Name.name %></td>
+                <% end %>
                 <td>
                   <% status = %w[Active Inactive].sample %>
                   <% if status == "Active" %>
@@ -61,4 +60,4 @@
   </section>
 </div>
 
-<%= render "front_pages/homes/show/footer" %>
+<%= render "dashboard/shared/footer" %>

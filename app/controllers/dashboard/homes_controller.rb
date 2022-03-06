@@ -1,5 +1,5 @@
 module Dashboard
-  class HomesController < ApplicationController
+  class HomesController < Dashboard::BaseController
     def show; end
   end
 end

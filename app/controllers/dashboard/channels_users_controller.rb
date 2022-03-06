@@ -1,6 +1,5 @@
 module Dashboard
-  class ChannelsUsersController < ApplicationController
-    before_action :authenticate_user!
+  class ChannelsUsersController < Dashboard::BaseController
     before_action :set_channel
 
     def create

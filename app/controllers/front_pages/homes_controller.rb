@@ -1,5 +1,5 @@
 module FrontPages
-  class HomesController < ApplicationController
+  class HomesController < FrontPages::BaseController
     def show; end
   end
 end

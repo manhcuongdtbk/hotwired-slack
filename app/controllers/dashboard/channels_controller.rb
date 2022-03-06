@@ -1,6 +1,5 @@
 module Dashboard
-  class ChannelsController < ApplicationController
-    before_action :authenticate_user!
+  class ChannelsController < Dashboard::BaseController
     before_action :set_channel, only: %i[show edit update destroy]
 
     def index

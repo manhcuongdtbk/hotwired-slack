@@ -1,16 +1,40 @@
-<h2><%= t(".forgot_your_password") %></h2>
+<% content_for :wrapper_id, "auth" %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: %>
+<div class="row h-100">
+  <div class="col-lg-5 col-12">
+    <div id="auth-left">
+      <div class="auth-logo">
+        <%= link_to root_path do %>
+          <%= image_tag "mazer/logo/logo.png", alt: "Logo" %>
+        <% end %>
+      </div>
+      <h1 class="auth-title"><%= t(".forgot_your_password") %></h1>
+      <p class="auth-subtitle mb-5">Input your email and we will send you reset password link.</p>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: %>
+
+        <div class="form-group position-relative has-icon-left mb-4">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-xl", placeholder: "Email" %>
+          <div class="form-control-icon">
+            <i class="bi bi-envelope"></i>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Send", class: "btn btn-primary btn-block btn-lg shadow-lg mt-5" %>
+        </div>
+      <% end %>
+
+      <div class="text-center mt-5 text-lg fs-4">
+        <p class="text-gray-600">
+          Remember your account? <%= link_to t(".sign_in"), new_session_path(resource_name), class: "font-bold" %>.
+        </p>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit t(".send_me_reset_password_instructions") %>
+  <div class="col-lg-7 d-none d-lg-block">
+    <div id="auth-right">
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

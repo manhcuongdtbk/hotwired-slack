@@ -57,7 +57,8 @@
               <%= link_to dashboard_channel_path(channel), class: "sidebar-link" do %>
                 <i class="bi bi-hash"></i>
                 <span><%= channel.name %></span>
-                <% if current_user.channels.include?(channel) %>
+                <%# TODO: remove &. %>
+                <% if current_user&.channels&.include?(channel) %>
                   <%= link_to dashboard_channel_channels_users_path(channel), data: { "turbo-method" => "delete" } do %>
                     <i class="bi bi-x-circle"></i>
                   <% end %>
@@ -70,14 +71,14 @@
         <li class="sidebar-title">Direct messages</li>
 
         <% if User.exists? %>
-          <% user = User.where.not(id: current_user.id) %>
-          <% all_user = User.all %>
-          <% all_user.each do |user| %>
+          <% User.all.each do |user| %>
             <li class="sidebar-item <%#= current_page?(dashboard_channel_path(user)) ? 'active' : '' %>">
               <%= link_to "#", class: "sidebar-link" do %>
                 <div class="avatar bg-warning">
                   <%= image_tag "mazer/faces/1.jpg", alt: "", srcset: "" %>
-                  <span class="avatar-status bg-success"></span>
+                  <% status = ["online", "offline"].sample %>
+                  <% status_color_class = status == "online" ? "bg-success" : "bg-danger" %>
+                  <span class="avatar-status <%= status_color_class %>"></span>
                 </div>
                 <span class="text-break"><%= user.email %></span>
               <% end %>

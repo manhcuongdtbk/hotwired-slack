@@ -14,11 +14,16 @@
   </head>
 
   <body>
-    <div id="app">
-      <%= render "dashboard/shared/sidebar" %>
-      <div id="main" class="<%= yield :main_class %>">
+    <div id="<%= content_for?(:wrapper_id) ? yield(:wrapper_id) : 'app' %>">
+      <%# TODO: remove FrontPages %>
+      <% if [Dashboard, FrontPages].include?(controller.class.module_parent) %>
+        <%= render "dashboard/shared/sidebar" %>
+        <div id="main" class="<%= yield :main_class %>">
+          <%= yield %>
+        </div>
+      <% else %>
         <%= yield %>
-      </div>
+      <% end %>
     </div>
   </body>
 </html>
