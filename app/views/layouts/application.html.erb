@@ -3,6 +3,9 @@
   <head>
     <title>HotwiredSlack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if user_signed_in? %>
+      <meta name="username" content="<%= current_user.name %>">
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

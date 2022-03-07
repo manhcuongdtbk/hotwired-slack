@@ -62,6 +62,7 @@
                   <%= link_to dashboard_channel_channels_users_path(channel), data: { "turbo-method" => "delete" } do %>
                     <i class="bi bi-x-circle"></i>
                   <% end %>
+                  <span data-unreads-target="mentions" class="badge bg-primary" hidden>0</span>
                 <% end %>
               <% end %>
             </li>
