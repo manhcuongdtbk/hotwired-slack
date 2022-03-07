@@ -90,4 +90,6 @@ group :test do
   gem 'webdrivers'
 
   gem 'shoulda-matchers', '~> 5.0'
+
+  gem 'simplecov', require: false
 end
