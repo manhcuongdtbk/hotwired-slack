@@ -6,3 +6,5 @@ import { application } from "./application"
 
 import ChannelController from "./channel_controller"
 application.register("channel", ChannelController)
+import UnreadsController from "./unreads_controller"
+application.register("unreads", UnreadsController)

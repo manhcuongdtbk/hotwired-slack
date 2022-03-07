@@ -53,7 +53,7 @@
 
         <% if Channel.exists? %>
           <% Channel.all.each do |channel| %>
-            <li class="sidebar-item <%= current_page?(dashboard_channel_path(channel)) ? 'active' : '' %>">
+            <li class="sidebar-item <%= current_page?(dashboard_channel_path(channel)) ? 'active' : '' %>" data-controller="unreads" data-unreads-id-value="<%= channel.id %>">
               <%= link_to dashboard_channel_path(channel), class: "sidebar-link" do %>
                 <i class="bi bi-hash"></i>
                 <span><%= channel.name %></span>
