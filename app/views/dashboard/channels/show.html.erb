@@ -44,17 +44,18 @@
 <!--              </div>-->
 <!--            </div>-->
             <div class="card-body pt-4 bg-grey">
-              <div class="chat-content" data-channel-target="messages">
-                <%= render @channel.messages %>
-              </div>
+              <%= turbo_stream_from "messages" %>
+              <%= turbo_frame_tag "messages" do %>
+                <div class="chat-content" data-channel-target="messages">
+                  <%= render partial: "dashboard/messages/message", collection: @channel.messages, locals: { channel: @channel } %>
+                </div>
+              <% end %>
             </div>
             <div class="card-footer">
               <div class="message-form d-flex flex-direction-column align-items-center">
                 <a href="http://" class="black"><i data-feather="smile"></i></a>
                 <div class="d-flex flex-grow-1 ml-4">
-                  <%= form_with model: [:dashboard, @channel, Message.new], local: false, class: "form", data: { action: "ajax:success->channel#clearMessage" } do |f| %>
-                    <%= f.text_field :body, class: "form-control", placeholder: "Type your message..", data: { "channel-target" => "newMessage" } %>
-                  <% end %>
+                  <%= render "dashboard/messages/form", channel: @channel, message: Message.new %>
                 </div>
               </div>
             </div>

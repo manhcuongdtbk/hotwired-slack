@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     resources :channels do
       resource :channels_users, only: %i[create destroy]
-      resources :messages, only: :create
+      resources :messages, only: %i[show create edit update]
     end
   end
 end

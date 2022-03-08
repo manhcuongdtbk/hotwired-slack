@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "message_form" do %>
+  <%= form_with model: [:dashboard, channel, message], id: dom_id(message), class: "form" do |f| %>
+    <%= f.text_field :body, class: "form-control", placeholder: "Type your message..", autofocus: "autofocus", data: { "channel-target" => "messageInput" } %>
+
+    <% if message.errors.any? %>
+      <ul>
+        <% message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+<% end %>

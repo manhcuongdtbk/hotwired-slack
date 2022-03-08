@@ -5,6 +5,23 @@ class Message < ApplicationRecord
   validates :body, presence: true
 
   after_create :process_mentions
+  after_create_commit do
+    broadcast_append_to(
+      'messages',
+      partial: 'dashboard/messages/message',
+      locals: { message: self, current_user: user, channel: channel }
+    )
+  end
+  after_update_commit do
+    broadcast_replace_to(
+      'messages',
+      partial: 'dashboard/messages/message',
+      locals: { message: self, current_user: user } # TODO: get the correct current_user
+    )
+  end
+  after_destroy_commit do
+    broadcast_remove_to 'messages'
+  end
 
   private
 

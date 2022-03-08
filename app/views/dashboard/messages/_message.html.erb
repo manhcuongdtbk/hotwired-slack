@@ -4,15 +4,25 @@
 <% end %>
 
 <% if message.user_id == current_user.id %>
-  <div class="chat">
-    <div class="chat-body">
-      <div class="chat-message"><%= message.body %></div>
+  <%= turbo_frame_tag dom_id(message) do %>
+    <div class="chat">
+      <div class="chat-body">
+        <div class="chat-message">
+          <%= message.body %>
+          <%= link_to "Edit", edit_dashboard_channel_message_path(channel, message) %>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% else %>
-  <div class="chat chat-left">
-    <div class="chat-body">
-      <div class="chat-message"><%= message.body %></div>
+  <%= turbo_frame_tag dom_id(message) do %>
+    <div class="chat chat-left">
+      <div class="chat-body">
+        <div class="chat-message">
+          <%= message.body %>
+          <%= link_to "Edit", edit_dashboard_channel_message_path(channel, message) %>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>

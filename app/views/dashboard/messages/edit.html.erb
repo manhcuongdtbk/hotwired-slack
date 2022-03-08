@@ -1,0 +1,4 @@
+<%= turbo_frame_tag dom_id(@message) do %>
+  <%= render "dashboard/messages/form", channel: @message.channel, message: @message %>
+  <%= link_to "Cancel", dashboard_channel_message_path(@message.channel, @message) %>
+<% end %>
