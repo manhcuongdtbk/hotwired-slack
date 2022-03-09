@@ -35,6 +35,20 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.2-2.tgz#cc0f57a5e815b28a78a0053fc1b95ac073bcef76"
   integrity sha512-DgkWkU/GJ1EBUBfs9PWDDy49k1QGJ/zvebGWEAnMChyt/FI9aXkCy5SOcXwDf1A6uY4Aif8jRlFbUgHS6UJHcA==
 
+"@rails/actiontext@^7.0.2-3":
+  version "7.0.2-3"
+  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-7.0.2-3.tgz#0599b370bb36f069cf942ca91e702d3c806ceddc"
+  integrity sha512-bC/5xgyCcMPDfGXI4EscyBEEw50UrAi68s6/Fib0mm4EuMChgIT4O2NOPMnhTaXf8IJWdVl5d6Ae/eOcoeAltw==
+  dependencies:
+    "@rails/activestorage" ">= 7.0.0-alpha1"
+
+"@rails/activestorage@>= 7.0.0-alpha1":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.0.2.tgz#81986034e1a38d931c40213073973b5a4c5b86e0"
+  integrity sha512-E/W80bMnlhmLz63GvY4fn82s9nDk8ZnzWBO++G3uQhwKAT/xdHgdL8VNfTOK14VKCQwHxJuBCXYnFXY68FOfFw==
+  dependencies:
+    spark-md5 "^3.0.1"
+
 anymatch@~3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.2.tgz#c0557c096af32f106198f4f4e2a383537e378716"
@@ -314,6 +328,11 @@ simple-datatables@2.1.13:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
+spark-md5@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
+  integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
+
 svg.draggable.js@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/svg.draggable.js/-/svg.draggable.js-2.2.2.tgz#c514a2f1405efb6f0263e7958f5b68fce50603ba"
@@ -375,3 +394,8 @@ to-regex-range@^5.0.1:
   integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
   dependencies:
     is-number "^7.0.0"
+
+trix@^2.0.0-alpha.1:
+  version "2.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/trix/-/trix-2.0.0-alpha.1.tgz#ac6bb38b68354371bd7bb9ade2eddf7fb9e28a16"
+  integrity sha512-/b6dnpNFfSJwqa9tlYu7vB1NN7KaUrlCkPanz9Esflw3nuT8BuBYF2TGNJLyKfj00Rr0YlDBESRihkJA7riBSw==

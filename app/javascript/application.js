@@ -12,3 +12,5 @@ import "./mazer/mazer"
 let table1 = document.querySelector('#table1');
 let dataTable = new DataTable(table1);
 import "./channels"
+import "trix"
+import "@rails/actiontext"
