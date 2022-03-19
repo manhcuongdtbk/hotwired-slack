@@ -22,9 +22,13 @@
       <% if [Dashboard, FrontPages].include?(controller.class.module_parent) %>
         <%= render "dashboard/shared/sidebar" %>
         <div id="main" class="<%= yield :main_class %>">
+          <%= render "shared/notices" %>
+
           <%= yield %>
         </div>
       <% else %>
+        <%= render "shared/notices" %>
+
         <%= yield %>
       <% end %>
     </div>
